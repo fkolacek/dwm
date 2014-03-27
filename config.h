@@ -74,8 +74,9 @@ static const char *cmdkilldwm[]  = { "killall", "dwm", NULL };
 static const char *cmdsoundup[]  = { "amixer", "-q", "sset", "Master", "5%+", NULL };
 static const char *cmdsounddown[]  = { "amixer", "-q", "sset", "Master", "5%-", NULL };
 static const char *cmdsoundtoggle[]  = { "amixer", "-q", "sset", "Master", "toggle", NULL };
-static const char *cmdKBus[]  = { "switch-keyboard.sh", "us", NULL };
-static const char *cmdKBskQwerty[]  = { "switch-keyboard.sh", "sk", "qwerty", NULL };
+
+
+static const char *cmdKB[]  = { "switch-keyboard.sh", NULL, NULL };
 /* Scripts */
 static const char *cmdopenbrowser[]  = { "open-browser.sh", NULL };
 static const char *cmddwmmenu[]  = { "dwm-menu.sh", NULL };
@@ -91,8 +92,7 @@ static Key keys[] = {
 	{ MODKEY,             XK_c,      spawn,          {.v = cmdopenbrowser } },
 	{ MODKEY|ShiftMask,   XK_m,      spawn,          {.v = cmddwmmenu } },
 	{ MODKEY|ShiftMask,   XK_w,      spawn,          {.v = cmdtogglewakelock } },
-	{ MODKEY|ShiftMask,   XK_k,      spawn,          {.v = cmdKBus } },
-	{ MODKEY|ShiftMask,   XK_l,      spawn,          {.v = cmdKBskQwerty } },
+	{ MODKEY|ShiftMask,   XK_l,      spawn,          {.v = cmdKB } },
 	{ MODKEY|ShiftMask,   XK_s,      spawn,          {.v = cmdscreenshot } },
 	/* Sound */
 	{ 0,                            KEY_SOUND_UP,     spawn,         {.v = cmdsoundup } },
