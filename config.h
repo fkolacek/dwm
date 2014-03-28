@@ -22,9 +22,6 @@ static const Bool showsystray       = True;     /* False means no systray */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
-/* False means using the scroll wheel on a window will not change focus */
-static const Bool focusonwheelscroll = False;
-
 /* tagging */
 #define MAX_TAGLEN 16
 static char tags[][MAX_TAGLEN] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };

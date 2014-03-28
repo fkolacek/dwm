@@ -484,7 +484,7 @@ buttonpress(XEvent *e) {
 			click = ClkWinTitle;
 	}
 	else if((c = wintoclient(ev->window))) {
-                if (focusonwheelscroll || (ev->button != Button4 && ev->button != Button5))
+                if ((ev->button != Button4 && ev->button != Button5))
                     focus(c);
                 
                 XAllowEvents(dpy, ReplayPointer, CurrentTime);
@@ -1070,11 +1070,11 @@ grabbuttons(Client *c, Bool focused) {
 						XGrabButton(dpy, buttons[i].button,
 						            buttons[i].mask | modifiers[j],
 						            c->win, False, BUTTONMASK,
-						            GrabModeSync, GrabModeSync, None, None);
+						            GrabModeAsync, GrabModeSync, None, None);
 		}
 		else
 			XGrabButton(dpy, AnyButton, AnyModifier, c->win, False,
-			            BUTTONMASK, GrabModeSync, GrabModeSync, None, None);
+			            BUTTONMASK, GrabModeAsync, GrabModeAsync, GrabModeSync, None);
 	}
 }
 
