@@ -36,7 +36,7 @@ do
         # Every 5 minutes
         if [ "$LOAD_TIME" -eq 0 ] ; then
             LOAD_TIME=60
-            LOAD="L:$( uptime | sed 's/.*,//' ) | "
+            LOAD="L: $( uptime | awk '{print $8}' | sed 's/,$//' ) | "
         fi
     fi
 
