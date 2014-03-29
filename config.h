@@ -61,13 +61,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-l", "10", NULL };
-static const char *termcmd[]  = { "terminator", NULL };
+static const char *termcmd[]  = { "gnome-terminal", NULL };
 static const char *filemanagercmd[]  = { "terminator", "-e", "ranger", NULL };
 static const char *cmdkilldwm[]  = { "killall", "dwm", NULL };
 /* Sound stuff */
 #define KEY_SOUND_UP 0x1008ff13
 #define KEY_SOUND_DOWN 0x1008ff11
 #define KEY_SOUND_TOGGLE 0x1008ff12
+#define KEY_PRINT 0xff61
 static const char *cmdsoundup[]  = { "amixer", "-q", "sset", "Master", "5%+", NULL };
 static const char *cmdsounddown[]  = { "amixer", "-q", "sset", "Master", "5%-", NULL };
 static const char *cmdsoundtoggle[]  = { "amixer", "-q", "sset", "Master", "toggle", NULL };
@@ -84,12 +85,12 @@ static const char *cmdtogglewakelock[]  = { "service", "dwm-panel", "toggle", "w
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ 0,             KEY_PRINT, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = filemanagercmd} },
 	{ MODKEY,             XK_c,      spawn,          {.v = cmdopenbrowser } },
 	{ MODKEY|ShiftMask,   XK_m,      spawn,          {.v = cmddwmmenu } },
 	{ MODKEY|ShiftMask,   XK_w,      spawn,          {.v = cmdtogglewakelock } },
-	{ MODKEY|ShiftMask,   XK_l,      spawn,          {.v = cmdKB } },
+	{ MODKEY,   XK_q,      spawn,          {.v = cmdKB } },
 	{ MODKEY|ShiftMask,   XK_s,      spawn,          {.v = cmdscreenshot } },
 	/* Sound */
 	{ 0,                            KEY_SOUND_UP,     spawn,         {.v = cmdsoundup } },
