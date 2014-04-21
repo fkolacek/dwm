@@ -3,7 +3,11 @@
 CONFIG_FILE=~/.dwm-menu
 
 FONT="-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*"
-DMENU="dmenu -fn $FONT"
+NORMBGCOLOR="#222222"
+NORMFGCOLOR="#bbbbbb"
+SELBGCOLOR="#005577"
+SELFGCOLOR="#eeeeee"
+DMENU="dmenu -fn $FONT -nb $NORMBGCOLOR -nf $NORMFGCOLOR -sb $SELBGCOLOR -sf $SELFGCOLOR"
 
 ERROR="ERROR! Config file is missing!
 Create $CONFIG_FILE file according to this template:
