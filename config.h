@@ -61,7 +61,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-l", "10", NULL };
-static const char *termcmd[]  = { "gnome-terminal", NULL };
+static const char *termcmd[]  = { "konsole", NULL };
 static const char *browsercmd[]  = { "google-chrome", NULL };
 //static const char *filemanagercmd[]  = { "terminator", "-e", "ranger", NULL };
 static const char *filemanagercmd[]  = { "nautilus", "--no-desktop", NULL };
