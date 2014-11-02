@@ -24,7 +24,7 @@ do
     SHOW=""
 
     # CUSTOM MESSAGE
-    CUSTOM=$(hostname)
+    CUSTOM=$(hostname -s)" | "
     test -e "$CUSTOM_FILE" && CUSTOM="$(cat "$CUSTOM_FILE")"
 
     # WAKELOCK
@@ -62,11 +62,16 @@ do
     fi
 
     # BATTERY
+    ACPI=$(which acpi 2>/dev/null)
     if [ "${FEATURES["battery"]}" = "1" ];then
         # Every 1 minute
         if [ "$BATTERY_TIME" -eq 0 ] ; then
             BATTERY_TIME=60
-            BATTERY="B:`acpi -V | head -n 1 | awk -F',' '{print $2}'` | "
+	      if [ ! -z $ACPI ]; then
+	            BATTERY="B:`$ACPI -V | head -n 1 | awk -F',' '{print $2}'` | "
+	      else
+		    BATTERY="B: `upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | sed -r 's/^.+ ([0-9\%]+).*$/\1/g' ` | "
+	      fi
         fi
     fi
 
