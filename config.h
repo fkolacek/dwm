@@ -80,9 +80,9 @@ static const char *cmdsoundtoggle[]  = { "amixer", "-q", "sset", "Master", "togg
 
 
 /* Scripts */
-static const char *cmdKB[]  = { "switch-keyboard.sh", NULL, NULL };
-static const char *cmdopenbrowser[]  = { "open-browser.sh", NULL };
-static const char *cmddwmmenu[]  = { "dwm-menu.sh", NULL };
+static const char *cmdKB[]  = { "dwm-switch-keyboard", NULL, NULL };
+static const char *cmdopenbrowser[]  = { "dwm-open-browser", NULL };
+static const char *cmddwmmenu[]  = { "dwm-menu", NULL };
 static const char *cmdscreenshot[]  = { "screenshot", "-i", NULL };
 /* DPMS - wake lock (dwm-panel needed) */
 static const char *cmdtogglewakelock[]  = { "service", "dwm-panel", "toggle", "wakelock", NULL };

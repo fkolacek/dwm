@@ -61,22 +61,22 @@ install: all
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dwm-personalized
 	@echo
 	@echo ":: [ DWM-PANEL ] ::"
-	@echo installing dwm-panel to /usr/bin
-	@cp -f dwm-panel/dwm-panel /usr/bin/dwm-panel
-	@cp -f dwm-panel/dwm-panel-cycle /usr/bin/dwm-panel-cycle
-	@chmod +x /usr/bin/dwm-panel /usr/bin/dwm-panel-cycle
+	@echo installing dwm-panel to /usr/local/bin
+	@cp -f dwm-panel/dwm-panel /usr/local/bin/dwm-panel
+	@cp -f dwm-panel/dwm-panel-cycle /usr/local/bin/dwm-panel-cycle
+	@chmod +x /usr/local/bin/dwm-panel /usr/local/bin/dwm-panel-cycle
 	@echo
 	@echo ":: [ SCRIPTS ] ::"
-	@echo "Installing 'open-browser.sh' to ${PREFIX}/bin/open-browser.sh"
-	@sed "s/WEB_BROWSER/${WEB_BROWSER}/g" < scripts/open-browser.sh > ${DESTDIR}${PREFIX}/bin/open-browser.sh
-	@echo "Installing 'dwm-menu.sh' to ${PREFIX}/bin/dwm-menu.sh"
-	@cp -f scripts/dwm-menu.sh ${DESTDIR}${PREFIX}/bin/dwm-menu.sh
-	@cp -f scripts/switch-keyboard.sh ${DESTDIR}${PREFIX}/bin/switch-keyboard.sh
+	@echo "Installing 'dwm-open-browser' to ${PREFIX}/bin/dwm-open-browser"
+	@sed "s/WEB_BROWSER/${WEB_BROWSER}/g" < scripts/dwm-open-browser > ${DESTDIR}${PREFIX}/bin/dwm-open-browser
+	@echo "Installing 'dwm-menu' to ${PREFIX}/bin/dwm-menu"
+	@cp -f scripts/dwm-menu ${DESTDIR}${PREFIX}/bin/dwm-menu
+	@cp -f scripts/dwm-switch-keyboard ${DESTDIR}${PREFIX}/bin/dwm-switch-keyboard
 	@echo
 	@echo ":: [ SCRIPTS - permissions ] ::"
-	@chmod +x ${DESTDIR}${PREFIX}/bin/open-browser.sh
-	@chmod +x ${DESTDIR}${PREFIX}/bin/dwm-menu.sh
-	@chmod +x ${DESTDIR}${PREFIX}/bin/switch-keyboard.sh
+	@chmod +x ${DESTDIR}${PREFIX}/bin/dwm-open-browser
+	@chmod +x ${DESTDIR}${PREFIX}/bin/dwm-menu
+	@chmod +x ${DESTDIR}${PREFIX}/bin/dwm-switch-keyboard
 
 
 uninstall:

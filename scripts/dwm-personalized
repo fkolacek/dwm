@@ -1,5 +1,5 @@
 #!/bin/bash
-/usr/bin/dwm-panel start
+/usr/local/bin/dwm-panel start
 
 # Black background
 xsetroot -solid black
@@ -20,5 +20,5 @@ fi
 test -e $HOME/.dwm-start && $HOME/.dwm-start &
 
 while true; do
-    dwm || { /usr/bin/dwm-panel stop; exit; }
+    dwm || { /usr/local/bin/dwm-panel stop; exit; }
 done
