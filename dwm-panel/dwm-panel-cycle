@@ -29,7 +29,7 @@ do
 
     # WAKELOCK
     WAKELOCK=""
-    xset q | grep "DPMS is Disabled" > /dev/null && WAKELOCK="WL | " 2>/dev/null
+    #xset q | grep "DPMS is Disabled" > /dev/null && WAKELOCK="WL | " 2>/dev/null
 
     # NETWORK
     if [ "${FEATURES["network"]}" = "1" ]; then
