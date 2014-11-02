@@ -24,7 +24,7 @@ do
     SHOW=""
 
     # CUSTOM MESSAGE
-    CUSTOM=""
+    CUSTOM=$(hostname)
     test -e "$CUSTOM_FILE" && CUSTOM="$(cat "$CUSTOM_FILE")"
 
     # WAKELOCK
