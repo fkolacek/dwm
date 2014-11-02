@@ -36,7 +36,7 @@ do
       INTERFACE=$(ip route | grep default | sed -r 's/.+dev ([^\ ]+) .+/\1/g')
       
       if [ "$INTERFACE" != "" ]; then 
-        NETWORK="N: "$(ifconfig $INTERFACE | grep "inet adr" | sed -r 's/.+adr:([^\ ]+) .+/\1/g')" | "
+        NETWORK="N: "$(ip addr show $INTERFACE | grep 'inet ' | sed -r 's/^.+inet ([0-9\.\/]+).+$/\1/g')" | "
       else 
         NETWORK="N: Disconnected | "
       fi
