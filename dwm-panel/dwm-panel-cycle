@@ -47,7 +47,7 @@ do
         # Every 5 minutes
         if [ "$LOAD_TIME" -eq 0 ] ; then
             LOAD_TIME=60
-            LOAD="L: $( uptime | sed -r 's/.+load\ average\: ([0-9\,]+)\,.+/\1/' ) | "
+            LOAD="L: $( uptime | sed -r 's/.+load\ average\: ([0-9\,\.]+)\,.+/\1/' ) | "
         fi
     fi
 
