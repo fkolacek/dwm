@@ -1,6 +1,6 @@
 Name:		dwm-fkolacek
 Version:	1.0
-Release:	4%{?dist}
+Release:	6%{?dist}
 Summary:	Customized DWM packed to RPM
 Packager:	Frantisek Kolacek <fkolacek@redhat.com>
 Group:		User Interface/Desktops
@@ -9,7 +9,7 @@ URL:		http://github.com/fkolacek/dwm
 Source0:	dwm-fkolacek-1.0.tgz
 
 BuildRequires:	gcc libX11-devel libXinerama-devel make
-Requires:	terminus-fonts xorg-x11-xinit
+Requires:	terminus-fonts xorg-x11-xinit dmenu
 
 %description
 Custom DWM configuration packed to RPM package.
@@ -66,8 +66,15 @@ chmod 755 %{buildroot}/usr/local/bin/dwm-{menu,switch-keyboard,open-browser}
 /usr/local/bin/dwm-open-browser
 
 %changelog
+* Thu Dec 20 2014	Frantisek Kolacek <fkolacek@redhat.com> 1.0-6
+--Updated load format in dwm-panel-cycle
+
+* Thu Dec 04 2014	Frantisek Kolacek <fkolacek@redhat.com> 1.0-4
+--Added required package: dmenu
+
 * Sun Nov 02 2014	Frantisek Kolacek <fkolacek@redhat.com> 1.0-1
 --Initial build
 
 * Sun Nov 02 2014	Frantisek Kolacek <fkolacek@redhat.com> 1.0-4
 --Naming and placing unification, resynced to repository
+
